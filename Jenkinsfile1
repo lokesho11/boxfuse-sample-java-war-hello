@@ -19,21 +19,9 @@ pipeline {
             steps {
                 script {
                    sshagent(['TOM']) {
-                  sh 'scp -o StringHostKeyChecking-no target/boxfuse-sample-java-war-hello.war ubuntu@3.110.106.240:/home/ubuntu/apache-tomcat-9.0.89/webapps/'
-'
-                       
+                  sh 'scp -o StringHostKeyChecking-no target/boxfuse-sample-java-war-hello.war ubuntu@3.110.106.240:/home/ubuntu/apache-tomcat-9.0.89/webapps/'  
                     }
                 }
             }
         }
     }
-    
-    post {
-        success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Deployment failed. Check logs and server settings.'
-        }
-    }
-}
