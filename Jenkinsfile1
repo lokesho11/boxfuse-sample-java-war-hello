@@ -18,7 +18,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    sshagent(['NewTomcat']) {
+                   sshagent(['TOM']) {
                   sh ' scp -o StringHostKeyChecking-no target/boxfuse-sample-java-war-hello.war ubuntu@3.110.106.240:/home/ubuntu/apache-tomcat-9.0.89/webapps/
 '
                        
