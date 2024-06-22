@@ -19,16 +19,9 @@ pipeline {
             steps {
                 script {
                     sshagent(['NewTomcat']) {
-
-                        // Copy the WAR file to a temporary directory on the remote server
-                        sh "scp -o StrictHostKeyChecking=no ${localWarFile} ubuntu@3.110.106.240:${remoteTempDir}"
-
-                        // Move the WAR file from the temporary directory to the final directory using sudo
-                        sh "ssh ubuntu@3.110.106.240 'sudo mv ${remoteTempDir}boxfuse-sample-java-war-hello.war ${remoteDir}'"
-
-                        // Shutdown and then startup Tomcat on the remote server
-                        sh "ssh ubuntu@3.110.106.240 'sudo ${remoteShutdownScript}'"
-                        sh "ssh ubuntu@3.110.106.240 'sudo ${remoteStartupScript}'"
+                  sh ' scp -o StringHostKeyChecking-no target/boxfuse-sample-java-war-hello.war ubuntu@3.110.106.240:/home/ubuntu/apache-tomcat-9.0.89/webapps/
+'
+                       
                     }
                 }
             }
