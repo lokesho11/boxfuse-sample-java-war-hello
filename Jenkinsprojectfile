@@ -46,7 +46,7 @@ pipeline {
                 deployToTomcat('13.233.127.33', 'tomcat', 'tomcat', 'http://13.233.127.33:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Prod')
                 
                 // Send Slack notification
-                slackSend(channel: 'jenkins', message: "Deployment to PROD has been approved by manager.")
+                slackSend(channel: 'mh', message: "Deployment to PROD has been approved by manager.")
             }
         }
     }
