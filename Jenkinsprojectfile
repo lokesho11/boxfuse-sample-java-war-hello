@@ -24,7 +24,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'fe/dev' }
             }
             steps {
-                deployToTomcat('13.233.172.28', 'tomcat', 'tomcat', 'http://13.233.172.28:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
+                deployToTomcat('13.232.250.196', 'tomcat', 'tomcat', 'http://13.232.250.196:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
             }
         }
         stage("Deploy to QA") {
