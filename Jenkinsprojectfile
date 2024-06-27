@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    }
     stages {
         stage("GIT checkout") {
             steps {
@@ -24,6 +23,7 @@ pipeline {
             }
         }
     }
+}
 
 
 def deployToTomcat(tomcatIP, username, password, tomcatURL, contextPath, environment) {
