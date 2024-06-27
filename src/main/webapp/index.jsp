@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROD</title>
+    <title>DEV</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,7 +80,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>PROD Environment</h1>
+        <h1>DEV Environment</h1>
     </div>
     <div class="search-container">
         <input type="text" placeholder="Search for products...">
