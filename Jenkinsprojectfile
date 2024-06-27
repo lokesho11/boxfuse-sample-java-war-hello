@@ -22,6 +22,17 @@ pipeline {
                 deployToTomcat('13.233.127.33', 'tomcat', 'tomcat', 'http://13.233.127.33:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Prod')
             }
         }
+
+stage("Deploy to QA") {
+            when {
+                expression { params.BRANCH_NAME == 'fe/qa' }
+            }
+            steps {
+                deployToTomcat('13.234.116.73', 'tomcat', 'tomcat', 'http://13.234.116.73:8080/manager/text', '/boxfuse-sample-java-war-hello', 'QA')
+            }
+        }
+
+
     }
 }
 
